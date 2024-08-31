@@ -60,23 +60,24 @@ This project simulates charging events for electric vehicles and provides visual
 
 ## Tree of Project 
 
-Ev-charging-simulator
-	- node_modules
-	- public
-	- src
-		— components
-			— ChargePointChart.tsx
-			— InputForm.tsx
-			— OutputVisualization.tsx
-			— SimulationResult.tsx
-		— pages
-		— services
-			— simulationService.ts
-		— styled
-			— ChargePointChart.style.js
-			— InputForm.style.js
-			— OutputVisualization.style.js
-			— SimulationResult.style.js
-		— types
-			— types.js
-		— utils
+Ev-charging-simulator/ 
+├── node_modules/ 
+├── public/ 
+├── src/ │ 
+├── components/ 
+│ │ ├── ChargePointChart.tsx 
+│ │ ├── InputForm.tsx 
+│ │ ├── OutputVisualization.tsx 
+│ │ └── SimulationResult.tsx 
+│ ├── pages/ 
+│ ├── services/ 
+│ │ └── simulationService.ts 
+│ ├── styled/ 
+│ │ ├── ChargePointChart.style.js 
+│ │ ├── InputForm.style.js 
+│ │ ├── OutputVisualization.style.js 
+│ │ └── SimulationResult.style.js 
+│ ├── types/ 
+│ │ └── types.js 
+│ └── utils/
+│ │ └── simulation.ts 
