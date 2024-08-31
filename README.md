@@ -1,46 +1,82 @@
-# Getting Started with Create React App
+# Charging Batteries Project
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This project focuses on simulating and visualizing charging events for electric vehicle (EV) batteries.
+
+TechStack: TS, React.js and styled-components plus chart.js.
+
+
+### Prerequisites
+
+Ensure you have Node.js and npm installed on your machine. You can download them from [nodejs.org](https://nodejs.org/).
+
+### Installation
+
+1. **Clone the repository:**
+
+    ```bash
+    git clone [repository-url]
+    ```
+
+2. **Navigate into the project directory:**
+
+    ```bash
+    cd charging-batteries-project
+    ```
+
+3. **Install dependencies:**
+
+    ```bash
+    npm install
+    ```
 
 ## Available Scripts
 
 In the project directory, you can run:
 
-### `npm start`
+- **`npm start`**
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+    Runs the app in development mode. Open [http://localhost:3000](http://localhost:3000) to view it in the browser. The page will reload if you make edits, and you will see any lint errors in the console.
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+- **`npm test`**
 
-### `npm test`
+    Launches the test runner in interactive watch mode. For more information on running tests, see the [testing documentation](https://create-react-app.dev/docs/running-tests/).
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- **`npm run build`**
 
-### `npm run build`
+    Builds the app for production to the `build` folder. It correctly bundles React in production mode and optimizes the build for the best performance. The build is minified, and the filenames include hashes. Your app is ready to be deployed.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+    For more information on deployment, see the [deployment documentation](https://create-react-app.dev/docs/deployment/).
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Project Overview
 
-### `npm run eject`
+This project simulates charging events for electric vehicles and provides visualizations of various metrics, such as:
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+- Total energy consumed
+- Max power demand (theoretical and actual)
+- Concurrency factor
+- Charging events per day, month, and year
+- Total charging values
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## Tree of Project 
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+Ev-charging-simulator
+	- node_modules
+	- public
+	- src
+		— components
+			— ChargePointChart.tsx
+			— InputForm.tsx
+			— OutputVisualization.tsx
+			— SimulationResult.tsx
+		— pages
+		— services
+			— simulationService.ts
+		— styled
+			— ChargePointChart.style.js
+			— InputForm.style.js
+			— OutputVisualization.style.js
+			— SimulationResult.style.js
+		— types
+			— types.js
+		— utils
