@@ -1,18 +1,21 @@
 import React from 'react';
+import { ResultsContainer, ResultTitle, ResultItem } from '../styled/SimulationResult.style';
+import { SimulationResults } from '../types/types';
 
-interface SimulationResultsProps {
-    totalEnergy: number;
-    maxPowerDemand: number;
-    concurrencyFactor: number;
+interface SimulationResultProps {
+    simulationResults: SimulationResults;
 }
 
-export default function SimulationResults({ totalEnergy, maxPowerDemand, concurrencyFactor }: SimulationResultsProps) {
+const SimulationResult: React.FC<SimulationResultProps> = ({ simulationResults }) => {
     return (
-        <div>
-            <h3>Simulation Results</h3>
-            <p>Total Energy Consumed: {totalEnergy} kWh</p>
-            <p>Max Power Demand: {maxPowerDemand} kW</p>
-            <p>Concurrency Factor: {concurrencyFactor}</p>
-        </div>
+        <ResultsContainer>
+            <ResultTitle>Simulation Results</ResultTitle>
+            <ResultItem>Total Energy Consumed: {simulationResults.totalEnergyConsumed.toFixed(2)} kWh</ResultItem>
+            <ResultItem>Theoretical Max Power Demand: {simulationResults.theoreticalMaxPowerDemand.toFixed(2)} kW</ResultItem>
+            <ResultItem>Actual Max Power Demand: {simulationResults.actualMaxPowerDemand.toFixed(2)} kW</ResultItem>
+            <ResultItem>Concurrency Factor: {(simulationResults.concurrencyFactor * 100).toFixed(2)}%</ResultItem>
+        </ResultsContainer>
     );
 }
+
+export default SimulationResult;

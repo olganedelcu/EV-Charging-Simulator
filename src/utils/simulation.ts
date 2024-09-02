@@ -1,8 +1,9 @@
-export function simulation(params: SimulationParams) {
-    const totalEnergy = params.chargePoints * params.chargingPower * 0.75;
-    const maxPowerDemand = params.chargePoints * params.chargingPower * 0.55;
-    const concurrencyFactor = maxPowerDemand / (params.chargePoints * params.chargingPower);
-    const chartData = Array.from({ length: 24 }, (_, i) => ({ name: `${i}:00`, value: Math.random() * maxPowerDemand }));
-
-    return { totalEnergy, maxPowerDemand, concurrencyFactor, chartData };
+export function getRandomElement(probabilities: number[]): number {
+    const rand = Math.random();
+    let sum = 0;
+    for (let i = 0; i < probabilities.length; i++) {
+        sum += probabilities[i];
+        if (rand < sum) return i;
+    }
+    return probabilities.length - 1;
 }

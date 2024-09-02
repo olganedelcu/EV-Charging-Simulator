@@ -1,26 +1,25 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, { useState } from 'react';
+import InputForm from './components/InputForm';
+import OutputVisualization from '../src/components/OutpuVisualization';
+import runSimulation from './services/simulationService';
+import { SimulationParams, SimulationResults } from './types/types';
 import './App.css';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+export default function App() {
+    const [simulationResults, setSimulationResults] = useState<SimulationResults | null>(null);
 
-export default App;
+    const handleRunSimulation = (params: SimulationParams) => {
+        const results = runSimulation(params);
+        setSimulationResults(results);
+    };
+
+    return (
+        <div className="App">
+            <h1>EV Charging Simulation</h1>
+            <InputForm onRunSimulation={handleRunSimulation} />
+            {simulationResults && (
+                <OutputVisualization simulationResults={simulationResults} />
+            )}
+        </div>
+    );
+}
