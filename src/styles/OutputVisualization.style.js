@@ -3,8 +3,8 @@ import styled from 'styled-components';
 export const ResultsContainer = styled.div`
   padding: 2rem;
   background-color: #ffffff;
-  border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  border-radius: 0.75rem;
+  box-shadow: 0 4px 0.75rem rgba(0, 0, 0, 0.1);
   margin-top: 2rem;
   max-width: 800px;
   margin-left: auto;
@@ -31,7 +31,7 @@ export const ChartContainer = styled.div`
   margin-top: 2rem;
   padding: 1.5rem;
   background-color: #f9f9f9;
-  border-radius: 10px;
+  border-radius: 0.6rem;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
   text-align: center;
 

@@ -1,5 +1,5 @@
 import React from 'react';
-import { ChartContainer, ChartTitle } from "../styled/ChargePointChart.style" ;
+import { ChartContainer, ChartTitle } from "../styles/ChargePointChart.style" ;
 
 interface ChargePointChartProps {
     numChargePoints: number;

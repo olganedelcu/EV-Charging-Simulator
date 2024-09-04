@@ -5,8 +5,9 @@ import {
     Input,
     SubmitButton,
     InputContainer,
-} from '../styled/InputForm.style';
+} from '../styles/InputForm.style';
 import { SimulationParams } from '../types/types';
+import {isNumberOfChargePointsValid} from "../utils/validations";
 
 interface InputFormProps {
     onRunSimulation: (params: SimulationParams) => void;
@@ -21,24 +22,6 @@ export default function InputForm({ onRunSimulation }: InputFormProps) {
 
     const handleSubmit = (e: React.FormEvent) => {
         e.preventDefault();
-
-        // Validate inputs
-        if (numChargePoints < 1 || numChargePoints > 100) {
-            alert('Number of charge points must be between 1 and 100.');
-            return;
-        }
-        if (arrivalProbabilityMultiplier < 20 || arrivalProbabilityMultiplier > 200) {
-            alert('Arrival probability multiplier must be between 20 and 200%.');
-            return;
-        }
-        if (consumptionPerCar < 10 || consumptionPerCar > 50) {
-            alert('Consumption per car must be between 10 and 50 kWh.');
-            return;
-        }
-        if (chargingPower < 5 || chargingPower > 50) {
-            alert('Charging power must be between 5 and 50 kW.');
-            return;
-        }
 
         onRunSimulation({
             numChargePoints,
@@ -58,7 +41,7 @@ export default function InputForm({ onRunSimulation }: InputFormProps) {
                     value={numChargePoints}
                     onChange={(e) => setNumChargePoints(parseInt(e.target.value) || 0)}
                     min="1"
-                    max="100"
+                    max="22"
                 />
             </InputContainer>
 
@@ -102,7 +85,7 @@ export default function InputForm({ onRunSimulation }: InputFormProps) {
                 />
             </InputContainer>
 
-            <SubmitButton type="submit">Run Simulation</SubmitButton>
+            <SubmitButton type="submit" disabled={!isNumberOfChargePointsValid(numChargePoints)}>Run Simulation</SubmitButton> {/* disable prop to do validation on the values that imüit. If validation fails, with Styled components we can use props to do dynamic styles, if a input has an invalid value we can do a red background or border. */}
         </Form>
     );
 }

@@ -3,7 +3,7 @@ import styled from 'styled-components';
 export const Form = styled.form`
   padding: 2rem;
   background-color: #ffffff;
-  border-radius: 12px;
+  border-radius: 0.75rem;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
   margin: 2rem auto;
   max-width: 600px;
@@ -26,8 +26,7 @@ export const Input = styled.input`
   padding: 0.75rem;
   font-size: 1rem;
   border: 1px solid #ccc;
-  border-radius: 8px;
-  background-color: #f9f9f9;
+  border-radius: 0.5rem;
 `;
 
 export const SubmitButton = styled.button`
@@ -38,7 +37,7 @@ export const SubmitButton = styled.button`
   color: #fff;
   background-color: #2980b9;
   border: none;
-  border-radius: 8px;
+  border-radius: 0.5rem;
   cursor: pointer;
   transition: background-color 0.3s ease;
 

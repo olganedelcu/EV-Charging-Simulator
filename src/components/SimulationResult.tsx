@@ -1,5 +1,5 @@
 import React from 'react';
-import { ResultsContainer, ResultTitle, ResultItem } from '../styled/SimulationResult.style';
+import { ResultsContainer, ResultTitle, ResultItem } from '../styles/SimulationResult.style';
 import { SimulationResults } from '../types/types';
 
 interface SimulationResultProps {

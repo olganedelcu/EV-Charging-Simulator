@@ -4,7 +4,7 @@ import {
     ResultTitle,
     ResultItem,
     ChartContainer,
-} from '../styled/OutputVisualization.style';
+} from '../styles/OutputVisualization.style';
 import { SimulationResults } from '../types/types';
 import { Bar } from 'react-chartjs-2';
 import {

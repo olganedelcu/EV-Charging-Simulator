@@ -1,22 +1,8 @@
 import { SimulationParams, SimulationResults, ChargingEvent } from '../types/types';
 import { getRandomElement } from '../utils/simulation';
+import {TOTAL_INTERVALS, DAYS_PER_YEAR, INTERVALS_PER_DAY, arrivalProbabilities, chargingDemandProbabilities, chargingDemandKm, kwhPer100Km} from '../constants/values'
 
-const INTERVALS_PER_DAY = 96;
-const DAYS_PER_YEAR = 365;
-const TOTAL_INTERVALS = INTERVALS_PER_DAY * DAYS_PER_YEAR;
 
-// Mock Data
-const arrivalProbabilities = [
-    0.0094, 0.0094, 0.0094, 0.0094, 0.0094, 0.0094, 0.0094, 0.0094, 0.0283, 0.0283,
-    0.0566, 0.0566, 0.0566, 0.0755, 0.0755, 0.0755, 0.1038, 0.1038, 0.1038, 0.0472,
-    0.0472, 0.0472, 0.0094, 0.0094
-];
-
-const chargingDemandProbabilities = [
-    0.3431, 0.049, 0.098, 0.1176, 0.0882, 0.1176, 0.1078, 0.049, 0.0294
-];
-const chargingDemandKm = [0, 5, 10, 20, 30, 50, 100, 200, 300];
-const kwhPer100Km = 18;
 
 function generateChargingEvents(numChargePoints: number, chargingPower: number): ChargingEvent[] {
     const events: ChargingEvent[] = [];
@@ -31,6 +17,7 @@ function generateChargingEvents(numChargePoints: number, chargingPower: number):
         });
 
         // Allocate charging for arriving EVs
+        //inside of another function SEPARATE
         arrivals.forEach((arrival, i) => {
             if (arrival < numChargePoints) {
                 const energyRequired = chargingNeeds[i];
@@ -41,6 +28,7 @@ function generateChargingEvents(numChargePoints: number, chargingPower: number):
         });
 
         // Updating charge points status
+        // in another function as well, maybe we need it again in the fututre SEPARATE
         for (let j = 0; j < numChargePoints; j++) {
             if (chargepointsStatus[j] > interval) {
                 chargepointsStatus[j] = Math.max(chargepointsStatus[j] - 1, 0);
